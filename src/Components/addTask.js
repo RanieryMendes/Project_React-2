@@ -1,6 +1,8 @@
 import React from "react"
 
 import ShowList from "./renderList"
+
+import "./styles/header_style.css"
 class AddTask extends React.Component{
     constructor(props){
         super(props);
@@ -41,7 +43,7 @@ class AddTask extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="getForm">
             
 
             <label htmlFor="newTask" > Add a new Task </label>
@@ -50,9 +52,7 @@ class AddTask extends React.Component{
            
             <input type="submit" value="Submit" onClick= {this.handleSubmit}></input>
 
-            <ShowList data= {this.state.activity}>
-
-            </ShowList>
+            <ShowList data= {this.state.activity}/>
            
          
            

@@ -4,6 +4,12 @@ import AddTask from "./addTask"
 
 import ShowList from "./renderList";
 
+import "./styles/header_style.css"
+
+
+
+
+
 class Cabeca extends React.Component{
 
     constructor(props){
@@ -33,16 +39,16 @@ class Cabeca extends React.Component{
 
     render(){
         return(
-    <div>
-        <h1>Raniery's TO DO LIST</h1>
+    <div className="header">
+        <h1 className="main_title">Raniery's TO DO LIST</h1>
 
         <br/>
 
-        <h2>Welcome to your list </h2>
+        <h2>Welcome to your list! </h2>
 
         <br/>
         
-        <h2> Here you can see the tasks you have to do and add new things too</h2>
+        <h2> Here you can see the tasks you have to do and add new things too. Enjoy! 📝</h2>
         
         <AddTask  localStore={this.storeTask}/>
 

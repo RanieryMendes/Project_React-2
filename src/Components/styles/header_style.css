@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Piedra&display=swap');
+
+.main_title{
+    font-size: 4rem;
+    font-family: 'Piedra', cursive;
+    display: flex;
+    justify-content: center;
+   
+  
+
+}
+.header{
+    background-color: dimgray;
+    color: whitesmoke;
+}
+
+.header h2{
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    font-weight: 300;
+    margin-left: 20px;
+}
+
+
+.renderList{
+
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    margin-left: 5rem;
+    font-weight: 300;
+    margin-top: 20px;
+
+
+}
+
+.renderList li{
+   
+    list-style-type: square
+}
+
+.getForm{
+    
+    
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    margin-left: 5rem;
+    font-weight: 300;
+    margin-top: 20px;
+
+}

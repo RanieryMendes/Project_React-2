@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles/header_style.css"
+
 class ShowList extends React.Component{
 
 //define component to render the list
@@ -13,17 +15,16 @@ constructor(props){
 
 render(){
      
-
     return(
-            <div>
+            <div className="renderList">
+                <h2>You currently have {this.props.data.length} tasks</h2>   
                 <ul>
         {this.props.data.map(task => (
-        <li key={task}>{task}</li>
+        <li key={"1" + task}>{task}</li>
       ))}
 
                 </ul>  
-
-                 <h4>You currently have {this.props.data.length} tasks</h4>   
+                 
             </div>
         )
     }

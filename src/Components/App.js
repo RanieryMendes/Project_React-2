@@ -12,7 +12,7 @@ function App() {
     <div>
    
     <Cabeca />
-    <ShowList/> 
+    
     </div>
   )
 }
