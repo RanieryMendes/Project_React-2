@@ -11,7 +11,10 @@ constructor(props){
         listArray:[],
     }
 
+  
+
 }
+
 
 render(){
      
@@ -19,9 +22,13 @@ render(){
             <div className="renderList">
                 <h2>You currently have {this.props.data.length} tasks</h2>   
                 <ul>
-        {this.props.data.map(task => (
-        <li key={"1" + task}>{task}</li>
-      ))}
+        {this.props.data.map(task => 
+            
+         <li key={task}>{task} <button className="removeTask" key={task} onClick={() => this.props.removeToDo(task)}>Remove</button> 
+        </li>
+      )
+      
+        }
 
                 </ul>  
                  

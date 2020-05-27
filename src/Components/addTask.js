@@ -15,6 +15,8 @@ class AddTask extends React.Component{
        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
+
         
 
     }
@@ -41,6 +43,13 @@ class AddTask extends React.Component{
      
   }
 
+  handleRemove(index){
+     this.setState({
+         activity: this.state.activity.filter(element => element !== index)
+     })
+
+  }
+
     render(){
         return(
             <div className="getForm">
@@ -51,8 +60,9 @@ class AddTask extends React.Component{
             <input type='text'  name="newTask" value={this.state.what} onChange={this.handleChange}></input>
            
             <input type="submit" value="Submit" onClick= {this.handleSubmit}></input>
+            
 
-            <ShowList data= {this.state.activity}/>
+            <ShowList data= {this.state.activity} removeToDo = {this.handleRemove}/>
            
          
            
