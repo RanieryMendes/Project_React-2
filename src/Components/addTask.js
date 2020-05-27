@@ -1,5 +1,6 @@
 import React from "react"
 
+import ShowList from "./renderList"
 class AddTask extends React.Component{
     constructor(props){
         super(props);
@@ -19,14 +20,15 @@ class AddTask extends React.Component{
 
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.what);
+        //alert('A name was submitted: ' + this.state.what);
         console.log(this.state.what);
         
         this.props.localStore(this.state.what);
 
+        this.setState.activity = this.state.activity.push(this.state.what); 
+
         this.setState({what:" "})
         
-       
 
         event.preventDefault();
 
@@ -47,6 +49,11 @@ class AddTask extends React.Component{
             <input type='text'  name="newTask" value={this.state.what} onChange={this.handleChange}></input>
            
             <input type="submit" value="Submit" onClick= {this.handleSubmit}></input>
+
+            <ShowList data= {this.state.activity}>
+
+            </ShowList>
+           
          
            
             </div> 

@@ -2,6 +2,8 @@ import React from "react";
 
 import AddTask from "./addTask"
 
+import ShowList from "./renderList";
+
 class Cabeca extends React.Component{
 
     constructor(props){
@@ -18,19 +20,35 @@ class Cabeca extends React.Component{
         let oldArray = this.state.tasks;
         oldArray.push(newTask);
         let newArray = oldArray;
-
         this.setState.tasks = newArray;
         console.log(this.state.tasks);
-
+        return (
+            <ShowList listToRender={this.state.tasks}/>
+    )
+        
     }
+
+
+ 
 
     render(){
         return(
     <div>
         <h1>Raniery's TO DO LIST</h1>
+
         <br/>
-        <h2>Welcome to your list. Here you can see the tasks you have to do and add new things too</h2>
+
+        <h2>Welcome to your list </h2>
+
+        <br/>
+        
+        <h2> Here you can see the tasks you have to do and add new things too</h2>
+        
         <AddTask  localStore={this.storeTask}/>
+
+      
+
+
     </div>
         )}
 }
