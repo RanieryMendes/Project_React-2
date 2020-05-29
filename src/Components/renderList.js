@@ -9,6 +9,7 @@ constructor(props){
     super(props);
     this.state = {
         listArray:[],
+     
     }
 
   
@@ -17,6 +18,8 @@ constructor(props){
 
 
 render(){
+    
+    console.log("Showing local Storage")
      
     return(
             <div className="renderList">
@@ -25,6 +28,7 @@ render(){
         {this.props.data.map(task => 
             
          <li key={task}>{task} <button className="removeTask" key={task} onClick={() => this.props.removeToDo(task)}>Remove</button> 
+         
         </li>
       )
       
