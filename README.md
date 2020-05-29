@@ -1,3 +1,5 @@
+![To Do List Major Layout](todolist_mainLayout.png)
+
 Raniery's To Do List
 
 It is a simple application developed using the React library. It aims to help the user to keep a simple, well designed to do list.
@@ -9,3 +11,5 @@ It implements a connection with local storage, so the user does not lose the tas
 Coding this app I could improve my skills in Javascript as well as expand my knowledge in React. It was good to explore and learn more about how the connection between components works.
 
 To costumize it is very easy. It just need to change a few lines of code, especifically the title ones.
+
+![Example of how the program works](todolist_example.png)
