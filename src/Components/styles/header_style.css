@@ -83,3 +83,18 @@
     color: black;
     border-style: none;
 }
+
+#fill_gap{
+
+    background-color: dimgray;
+    width:fit-content;
+    height: 24.5rem;
+
+}
+
+footer{
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    background-color: dimgray;
+    color: whitesmoke;
+}

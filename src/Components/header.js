@@ -7,11 +7,13 @@ import ShowList from "./renderList";
 import "./styles/header_style.css"
 
 
+//main component 
 
 class Cabeca extends React.Component{
 
     constructor(props){
         super(props);
+        //get data from local storage. If none, it creates a new array
         this.state = {
             
             tasks : JSON.parse(localStorage.getItem("save_list"))||[]
@@ -19,31 +21,26 @@ class Cabeca extends React.Component{
            
         }
 
-        /*let b = JSON.parse(localStorage.getItem('save_list'));
-       console.log("b " +b )
-        this.setState.tasks= b
-        */
-        console.log("im in the constructor")
-
-        
 
         this.storeTask = this.storeTask.bind(this);
         this.saveToStorage = this.saveToStorage.bind(this);
         this.saveFromRemove = this.saveFromRemove.bind(this);
-        this.atualizar = this.atualizar.bind(this);
+        
 
         
     
     }
 
     storeTask(newTask){
-        console.log("store function " + newTask)
+        
         let oldArray = this.state.tasks;
-        console.log("old array: " + oldArray)
+       
         oldArray.push(newTask);
+
         let newArray = oldArray;
+
         this.setState({tasks: newArray}, () => {
-        console.log(this.state.tasks + "  CALLING NOW localStorage");
+    
         this.saveToStorage();
         });
 
@@ -56,11 +53,12 @@ class Cabeca extends React.Component{
         
     }
 
+    //it saves the list of to dos into the local storage.
     saveToStorage(){
        
-        console.log("Save to storage called. The state task is: " + this.state.tasks);
+        
         try{
-        console.log("try scope")
+        
         let c = JSON.stringify(this.state.tasks);
         localStorage.setItem('save_list', c); 
         }
@@ -73,19 +71,17 @@ class Cabeca extends React.Component{
     }
 
     saveFromRemove(update_local){
+        //store array in string version into a variable
         let b = JSON.stringify(update_local);
+        //send it to local storage
         localStorage.setItem('save_list', b); 
+        
         this.setState({tasks:update_local})
        
 
     }
 
-    atualizar(lista_todo){
-        this.setState({tasks: lista_todo});
-    }
 
-
- 
 
     render(){
         return(

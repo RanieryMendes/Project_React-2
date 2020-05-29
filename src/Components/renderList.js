@@ -2,28 +2,29 @@ import React from "react";
 
 import "./styles/header_style.css"
 
+// component that renders the list
 class ShowList extends React.Component{
 
-//define component to render the list
+
 constructor(props){
     super(props);
+
     this.state = {
         listArray:[],
      
     }
-
-  
 
 }
 
 
 render(){
     
-    console.log("Showing local Storage")
-     
+     //it receives the list of tasks through props
     return(
             <div className="renderList">
+                
                 <h2>You currently have {this.props.data.length} tasks</h2>   
+                <div id="fill_gap" >
                 <ul>
         {this.props.data.map(task => 
             
@@ -35,6 +36,7 @@ render(){
         }
 
                 </ul>  
+                </div>
                  
             </div>
         )

@@ -7,13 +7,13 @@ class AddTask extends React.Component{
 
     constructor(props){
         super(props);
-        console.log("constructor addtask")
+       
 
-        let  ga =  this.props.currentData; 
+        let  get_data =  this.props.currentData; 
 
         this.state = {
            
-            activity : ga,
+            activity : get_data,
             what: " ",
            
         }
@@ -29,14 +29,14 @@ class AddTask extends React.Component{
 
 
 
+    //it adds the new task inputed by the user
     handleSubmit(event) {
-        //alert('A name was submitted: ' + this.state.what);
        
         
         this.props.localStore(this.state.what);
 
-        console.log("pre function" + this.state.activity);
-
+      
+        //erase input field so it can get new input
         this.setState({what:" "})
 
         
@@ -51,32 +51,23 @@ class AddTask extends React.Component{
 
   handleRemove(index){
 
+    //check if it is the item intended to be removed is the last item of the list. If it is the case, update state to new array
     if(this.state.activity.length === 1 && this.state.activity[0] === index){
         this.setState({activity: []}, () =>{
-        console.log("im in if")
+        
         this.props.removeUpdate(this.state.activity);
-        console.log("this is actvity now " + this.state.activity )});
+      });
     }
 
+    //regular remove of any task, but the last one
     else{
-        console.log("this is activity pre" + this.state.activity)
+       
     let d = this.state.activity.filter(element => element !== index); 
    
     this.setState({activity:d}, ()=>{
-     console.log("im in else. this is activity now " + this.state.activity)
+     
      this.props.removeUpdate(this.state.activity)});
-
-     console.log("this is d" + d)
-     
-   
-     
-
-
-     console.log("atualizar lista pos remove")
-     
-     
-
-     
+ 
 
   }
 }
